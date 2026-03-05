@@ -1,0 +1,280 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.35;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e8eefc;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+.sub {
+  margin: 8px 0 0 0;
+  color: #b9c6ea;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
+}
+
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #111a2e;
+  border: 1px solid #223152;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #cbd6f5;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #2a3a62;
+  background: #0c1427;
+  color: #e8eefc;
+  outline: none;
+}
+
+input::placeholder { color: #8091c2; }
+
+.btn {
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: #071022;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #180606;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #cbd6f5;
+  border-color: #2a3a62;
+}
+
+.msg {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid;
+  font-size: 13px;
+}
+
+.msg-error {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.45);
+  color: #ffd1d1;
+}
+
+.msg-success {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.45);
+  color: #d7ffe6;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9bb0e4;
+}
+
+.list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filters {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 240px 140px 200px;
+  align-items: center;
+}
+
+@media (max-width: 920px) {
+  .filters { grid-template-columns: 1fr; width: 100%; }
+}
+
+.search {
+  min-width: 220px;
+}
+
+.legend {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #2a3a62;
+  color: #cbd6f5;
+  background: #0c1427;
+}
+
+.tag-today { border-color: rgba(59, 130, 246, 0.55); }
+.tag-selected { border-color: rgba(245, 158, 11, 0.55); }
+.tag-search { border-color: rgba(34, 197, 94, 0.55); }
+
+.empty {
+  padding: 18px 12px;
+  color: #b9c6ea;
+  background: #0c1427;
+  border: 1px dashed #2a3a62;
+  border-radius: 12px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #223152;
+  background: #0c1427;
+}
+
+.item-main {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.item-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #111a2e;
+  border: 1px solid #2a3a62;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9c6ea;
+  font-size: 13px;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.dot { opacity: 0.7; }
+
+.title {
+  font-size: 14px;
+  color: #e8eefc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 520px;
+}
+
+.title-muted {
+  color: #9bb0e4;
+}
+
+.highlight {
+  border-width: 2px;
+}
+
+.highlight-today {
+  border-color: rgba(59, 130, 246, 0.8);
+}
+
+.highlight-selected {
+  border-color: rgba(245, 158, 11, 0.8);
+}
+
+.highlight-search {
+  border-color: rgba(34, 197, 94, 0.85);
+}
+
+.footer {
+  margin-top: 16px;
+  color: #b9c6ea;
+  font-size: 13px;
+}
