@@ -63,6 +63,7 @@ The search checks the following fields:
 - Booking title
 
 The search is case-insensitive and filters results dynamically.
+<img width="1440" height="900" alt="Screenshot 2026-03-05 at 12 57 48 PM" src="https://github.com/user-attachments/assets/cedeee4e-783f-4d3a-998d-4ca78359d754" />
 
 ---
 
@@ -75,6 +76,7 @@ Bookings are visually highlighted based on:
 - Today's bookings
 
 This helps users quickly identify relevant bookings.
+<img width="710" height="592" alt="Screenshot 2026-03-05 at 1 11 48 PM" src="https://github.com/user-attachments/assets/cfbe93e1-9d44-4e89-b48e-d17f7f622693" />
 
 ---
 
@@ -165,32 +167,6 @@ With additional development time, the following improvements could be implemente
 - Real-time updates for multi-user booking environments
 
 ---
-
-# Screenshots
-**Search Functionality**
-
-<img width="1440" height="900" alt="Screenshot 2026-03-05 at 12 57 48 PM" src="https://github.com/user-attachments/assets/cedeee4e-783f-4d3a-998d-4ca78359d754" />
-
-**Highlighting of bookings(different color borders for today, selected date etc)**
-
-<img width="710" height="592" alt="Screenshot 2026-03-05 at 1 11 48 PM" src="https://github.com/user-attachments/assets/cfbe93e1-9d44-4e89-b48e-d17f7f622693" />
-
-**Overlap error**
-
-<img width="1440" height="900" alt="Screenshot 2026-03-05 at 1 06 54 PM" src="https://github.com/user-attachments/assets/e431ffd2-0d8a-429b-a7f9-24aecae49cae" />
-
-**successful booking creation**
-
-<img width="1440" height="900" alt="Screenshot 2026-03-05 at 1 09 06 PM" src="https://github.com/user-attachments/assets/9a249ced-1b46-4b9f-ad9f-b0d494f269c7" />
-
-
-
-
-
-
-
-
-
 
 
 ---
