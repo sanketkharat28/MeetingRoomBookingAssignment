@@ -1,16 +1,194 @@
-# React + Vite
+# React Meeting Room Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React application that allows users to book meeting rooms while preventing scheduling conflicts. The system validates booking times, prevents overlapping bookings for the same room, and displays existing bookings clearly.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features
 
-## React Compiler
+- Book a meeting room with:
+  - Room selection
+  - Date
+  - Start time
+  - End time
+  - Optional meeting title
+- Prevent overlapping bookings for the same room and date
+- Validate time ranges (start time must be earlier than end time)
+- Display existing bookings in a clear list
+- Show meaningful error messages when a booking fails
+- Search functionality for filtering bookings
+- Visual highlighting of bookings based on search and selected date
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Structure
+```
+src/
+├── components/
+│   ├── BookingForm.jsx      
+│   └── BookingList.jsx      
+├── utils/
+│   └── bookingUtils.js      
+├── App.jsx                  
+├── main.jsx                 
+└── index.css               
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Components
+
+**BookingForm**
+- Handles user input for creating bookings
+- Displays validation and error messages
+
+**BookingList**
+- Displays all bookings
+- Provides search and filtering
+- Allows deletion of bookings
+
+**bookingUtils**
+- Contains helper functions used across the app
+
+---
+
+
+# Search Functionality
+
+Users can search bookings using a text input.  
+The search checks the following fields:
+
+- Room name
+- Date
+- Start time
+- End time
+- Booking title
+
+The search is case-insensitive and filters results dynamically.
+
+---
+
+# Highlighting
+
+Bookings are visually highlighted based on:
+
+- Search matches
+- Selected date
+- Today's bookings
+
+This helps users quickly identify relevant bookings.
+
+---
+
+# Overlap Detection Logic
+
+To prevent conflicting bookings, the system checks whether the new booking overlaps with any existing booking for the same room and date.
+
+The times are first converted into minutes using a helper function to simplify comparison.
+
+Two bookings overlap if the following condition is true:
+startA < endB AND startB < endA
+
+Where:
+- startA, endA → start and end time of the new booking
+- startB, endB → start and end time of an existing booking
+
+This approach allows back-to-back meetings such as:
+10:00 – 11:00
+11:00 – 12:00
+
+but prevents overlaps like:
+10:00 – 11:00
+10:30 – 11:30
+
+
+If an overlap is detected, a clear error message is shown indicating the conflicting booking.
+
+---
+
+# AI-Assisted Parts
+
+AI assistance was used during development for:
+
+- Generating the initial project structure
+- Creating helper utility functions
+- Providing suggestions for React component separation
+- Generating the initial UI layout
+
+---
+
+# Corrections Made After AI Generation
+
+After reviewing the generated code, the following improvements and corrections were made:
+
+- Verified and adjusted the overlap detection logic to correctly handle edge cases.
+- Simplified and organized the component structure.
+- Improved variable naming and readability.
+- Ensured validation properly handles invalid time ranges.
+- Cleaned up unnecessary code to keep the implementation focused and maintainable.
+
+---
+
+# Improvements Beyond AI
+
+Several enhancements were implemented beyond the initial generated code:
+
+- Separation of logic into reusable utility functions
+- Modular React component architecture
+- Search and filtering functionality
+- Visual highlighting of bookings
+- Clear and descriptive error messages
+
+
+---
+
+# Production Considerations
+
+Before deploying this feature to production, the following would be verified:
+
+- Additional edge case testing for booking validation
+- Time zone handling and consistent date formatting
+- Accessibility improvements for form controls
+- Responsive UI testing across devices
+- Integration with a backend API and database
+- Multi-user concurrency handling to avoid booking conflicts
+
+---
+
+# Future Improvements (If Given 2 More Days)
+
+With additional development time, the following improvements could be implemented:
+
+- Editing and updating existing bookings
+- Calendar or timeline-based booking visualization
+- Backend API integration with persistent storage
+- User authentication and role-based access
+- Automated unit tests for booking logic
+- Real-time updates for multi-user booking environments
+
+---
+
+# Screenshots
+
+
+---
+
+# How to Run the Project
+
+# 1. Clone the repository
+git clone https://github.com/sanketkharat28/MeetingRoomBookingAssignment.git
+
+# 2. Navigate into the project
+cd MeetingRoomBookingAssignment
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+
+Then open the application in the browser.
+
+---
+
+# Author
+
+**Sanket Kharat**
